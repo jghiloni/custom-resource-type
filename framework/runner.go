@@ -10,16 +10,6 @@ import (
 	"path/filepath"
 )
 
-type ImplementedScripts int
-
-const NoneImplemented ImplementedScripts = 0
-
-const (
-	Check ImplementedScripts = 1 << iota
-	In
-	Out
-)
-
 type ResourceType[S any, V any, G any, P any] struct {
 	stdout io.Writer
 	stdin  io.Reader
