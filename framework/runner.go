@@ -129,11 +129,11 @@ func (r ResourceType[SourceType, VersionType, GetParamsType, PutParamsType]) Run
 			response, err := r.out.Put(baseDir, req)
 
 			if err != nil {
-				return fmt.Errorf("get failed: %w", err)
+				return fmt.Errorf("put failed: %w", err)
 			}
 
 			if err = json.NewEncoder(r.stdout).Encode(response); err != nil {
-				return fmt.Errorf("could not output get response: %w", err)
+				return fmt.Errorf("could not output put response: %w", err)
 			}
 
 			return nil
